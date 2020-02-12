@@ -44,7 +44,7 @@ resource "openstack_compute_instance_v2" "mgmthost" {
   key_pair           = "${var.sshkey}"
 
   metadata = {
-    groups = "mgmthost"
+    groups = "management"
   }
 
   user_data = data.template_cloudinit_config.cloudinit.rendered
