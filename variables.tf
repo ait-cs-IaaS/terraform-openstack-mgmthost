@@ -31,8 +31,8 @@ variable "public_subnet" {
 	description = "The public subnet the management host should be connected to"
 }
 
-variable "public_ip_address" {
-	type = string
+variable "public_host_address_index" {
+	type = number
 	description = "Optional fixed ip address within the public net"
 	default = null
 }
@@ -41,7 +41,7 @@ variable "additional_networks" {
 	  object({
 		  network = string
 		  subnet = string
-		  ip_address = string
+		  host_address_index = number
 	  })
   )
   description = "Additional networks the management host should be connected to"

@@ -1,10 +1,10 @@
-# terraform {
-#   backend "consul" {}
-# }
+terraform {
+  backend "consul" {}
+}
 
 # Create instance
 module "mgmthost" {
-  source = "git@git-service.ait.ac.at:sct-cyberrange/terraform-modules/openstack-srv_noportsec.git?ref=v1.2.1" 
+  source = "git@git-service.ait.ac.at:sct-cyberrange/terraform-modules/openstack-srv_noportsec.git?ref=v1.3" 
   hostname = "mgmthost"
 	tag = "management"
 	image = var.image
@@ -13,7 +13,7 @@ module "mgmthost" {
 	sshkey = var.sshkey
 	network = var.public_net
 	subnet = var.public_subnet
-  ip_address = var.public_ip_address != null ? var.public_ip_address : null
+  host_address_index = var.public_host_address_index != null ? var.public_host_address_index : null
   additional_networks = var.additional_networks
 	userdatafile = "${path.module}/scripts/cloudinit.yml"
 }

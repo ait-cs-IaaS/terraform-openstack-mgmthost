@@ -1,4 +1,9 @@
 # Changelog
+
+## v1.2
+
+- Upgrade to base module v1.3 
+
 ## v1.1
 
 - Upgrade to terraform 0.13
