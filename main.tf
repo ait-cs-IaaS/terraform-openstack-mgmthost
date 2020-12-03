@@ -4,18 +4,19 @@ terraform {
 
 # Create instance
 module "mgmthost" {
-  source = "git@git-service.ait.ac.at:sct-cyberrange/terraform-modules/openstack-srv_noportsec.git?ref=v1.3" 
-  hostname = "mgmthost"
-	tag = "management"
-	image = var.image
-	flavor = var.flavor
-  volume_size = var.volume_size 
-	sshkey = var.sshkey
-	network = var.public_net
-	subnet = var.public_subnet
-  host_address_index = var.public_host_address_index != null ? var.public_host_address_index : null
+  source              = "git@git-service.ait.ac.at:sct-cyberrange/terraform-modules/openstack-srv_noportsec.git?ref=v1.4"
+  hostname            = "mgmthost"
+  tag                 = "management"
+  image               = var.image
+  flavor              = var.flavor
+  volume_size         = var.volume_size
+  use_volume          = var.use_volume
+  sshkey              = var.sshkey
+  network             = var.public_net
+  subnet              = var.public_subnet
+  host_address_index  = var.public_host_address_index != null ? var.public_host_address_index : null
   additional_networks = var.additional_networks
-	userdatafile = "${path.module}/scripts/cloudinit.yml"
+  userdatafile        = "${path.module}/scripts/cloudinit.yml"
 }
 
 # Assign floating IP
