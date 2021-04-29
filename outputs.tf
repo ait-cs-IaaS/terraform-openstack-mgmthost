@@ -1,5 +1,6 @@
 output "mgmthost" {
-  value = module.mgmthost.server
+  value     = module.mgmthost.server
+  sensitive = true
 }
 
 output "additional_networks" {
