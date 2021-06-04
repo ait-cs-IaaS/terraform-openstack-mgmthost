@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.1
+
+- Update default cloud init script
+- Make cloud init script configurable
+- Make hostname and group tag configurable
 ## v1.2
 
 - Upgrade to base module v1.3 
