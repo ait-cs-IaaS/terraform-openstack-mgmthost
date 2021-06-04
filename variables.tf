@@ -3,6 +3,12 @@ variable "image" {
   description = "name of the image to boot the hosts from"
 }
 
+variable "hostname" {
+  type        = string
+  description = "The hostname to use for the management host"
+  default     = "mgmthost"
+}
+
 variable "tag" {
   type        = string
   description = "Tag for the virtual machine"
