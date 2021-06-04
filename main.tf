@@ -6,7 +6,7 @@ terraform {
 module "mgmthost" {
   source              = "git@git-service.ait.ac.at:sct-cyberrange/terraform-modules/openstack-srv_noportsec.git?ref=v1.4.1"
   hostname            = "mgmthost"
-  tag                 = "management"
+  tag                 = var.tag
   image               = var.image
   flavor              = var.flavor
   volume_size         = var.volume_size
