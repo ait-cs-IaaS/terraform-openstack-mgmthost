@@ -15,6 +15,12 @@ variable "volume_size" {
   default     = 10
 }
 
+variable "userdata_file" {
+  type        = string
+  description = "Userdata for the virtual machine"
+  default     = null
+}
+
 variable "sshkey" {
   type        = string
   description = "ssh key for the mgmthost"

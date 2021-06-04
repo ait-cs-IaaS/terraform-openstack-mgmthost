@@ -16,7 +16,8 @@ module "mgmthost" {
   subnet              = var.public_subnet
   host_address_index  = var.public_host_address_index != null ? var.public_host_address_index : null
   additional_networks = var.additional_networks
-  userdatafile        = "${path.module}/scripts/cloudinit.yml"
+  userdatafile        = var.userdata_file == null ? "${path.module}/scripts/cloudinit.yml" : var.userdata_file
+
 }
 
 # Assign floating IP
