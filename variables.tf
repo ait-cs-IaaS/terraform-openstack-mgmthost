@@ -3,6 +3,18 @@ variable "image" {
   description = "name of the image to boot the hosts from"
 }
 
+variable "hostname" {
+  type        = string
+  description = "The hostname to use for the management host"
+  default     = "mgmthost"
+}
+
+variable "tag" {
+  type        = string
+  description = "Tag for the virtual machine"
+  default     = "management"
+}
+
 variable "flavor" {
   type        = string
   description = "instance flavor for the mgmthost"
@@ -13,6 +25,12 @@ variable "volume_size" {
   type        = string
   description = "volume_size"
   default     = 10
+}
+
+variable "userdata_file" {
+  type        = string
+  description = "Userdata for the virtual machine"
+  default     = null
 }
 
 variable "sshkey" {
