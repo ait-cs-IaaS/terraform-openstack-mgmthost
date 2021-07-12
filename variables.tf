@@ -15,6 +15,12 @@ variable "tag" {
   default     = "management"
 }
 
+variable "metadata" {
+  type        = map(string)
+  description = "The metadata values to assign to the instance"
+  default     = {}
+}
+
 variable "flavor" {
   type        = string
   description = "instance flavor for the mgmthost"

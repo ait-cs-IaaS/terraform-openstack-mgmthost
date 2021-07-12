@@ -4,9 +4,10 @@ terraform {
 
 # Create instance
 module "mgmthost" {
-  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.4.2"
+  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.4.3"
   hostname            = var.hostname
   tag                 = var.tag
+  metadata            = var.metadata
   image               = var.image
   flavor              = var.flavor
   volume_size         = var.volume_size

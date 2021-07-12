@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.3.3
+ - Move to github
+ - Add support for additional metadata for the instance
 ## v1.3.2
 
 - Update default cloud init script
