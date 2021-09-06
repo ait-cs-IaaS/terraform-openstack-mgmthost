@@ -1,8 +1,14 @@
 # Changelog
 
+## v1.3.4
+
+- Add support for ovh, via direct public IP
+
 ## v1.3.3
- - Move to github
- - Add support for additional metadata for the instance
+
+- Move to github
+- Add support for additional metadata for the instance
+
 ## v1.3.2
 
 - Update default cloud init script
@@ -12,12 +18,14 @@
 ## v1.3.1
 
 - Add sensitive flag to output
+
 ## v1.3
 
- -  Upgrade to base module v1.4
+- Upgrade to base module v1.4
+
 ## v1.2
 
-- Upgrade to base module v1.3 
+- Upgrade to base module v1.3
 
 ## v1.1
 
