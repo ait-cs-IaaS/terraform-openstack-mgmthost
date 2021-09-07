@@ -8,5 +8,6 @@ output "additional_networks" {
 }
 
 output "floating_ip" {
-  value = openstack_networking_floatingip_v2.fip.address
+  value = var.create_fip ? openstack_networking_floatingip_v2.fip[0].address : module.mgmthost.server.network[0].fixed_ip_v4
+  sensitive = true
 }

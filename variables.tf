@@ -78,6 +78,11 @@ variable "fip_pool" {
   default     = "provider-cyberrange-207"
 }
 
+variable "create_fip" {
+  type        = bool
+  description = "If a Floating IP should be allocated and assigend"
+  default     = true
+}
 
 variable "use_volume" {
   type        = bool

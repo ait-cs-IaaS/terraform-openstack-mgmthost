@@ -24,11 +24,12 @@ module "mgmthost" {
 # Assign floating IP
 
 resource "openstack_networking_floatingip_v2" "fip" {
-  pool = var.fip_pool
+  count = var.create_fip ? 1 : 0
+  pool  = var.fip_pool
 }
 
 resource "openstack_compute_floatingip_associate_v2" "fip" {
-  floating_ip = openstack_networking_floatingip_v2.fip.address
+  count       = var.create_fip ? 1 : 0
+  floating_ip = openstack_networking_floatingip_v2.fip[0].address
   instance_id = module.mgmthost.server.id
 }
-
