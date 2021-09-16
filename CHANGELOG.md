@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.4.4
+
+- Change version to match openstack-srv_noportsec
+- Add ext_nets variable to assign an external network via dynmaic block
+
 ## v1.3.4
 
 - Add support for ovh, via direct public IP

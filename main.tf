@@ -4,7 +4,7 @@ terraform {
 
 # Create instance
 module "mgmthost" {
-  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.4.3"
+  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.4.4"
   hostname            = var.hostname
   tag                 = var.tag
   metadata            = var.metadata
@@ -18,7 +18,8 @@ module "mgmthost" {
   host_address_index  = var.public_host_address_index != null ? var.public_host_address_index : null
   additional_networks = var.additional_networks
   userdatafile        = var.userdata_file == null ? "${path.module}/scripts/cloudinit.yml" : var.userdata_file
-
+  network_access      = var.network_access
+  ext_networks        = var.ext_networks
 }
 
 # Assign floating IP
