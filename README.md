@@ -4,7 +4,7 @@ Creates a management-host that resides in all networks
 
 ## Configuration
 
-```
+```terraform
 module "mgmthost" {
   source = "git@github.com:ait-cs-IaaS/terraform-openstack-mgmthost.git"
   image_id = openstack_images_image_v2.ubuntu-bionic-amd64.id

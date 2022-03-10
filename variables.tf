@@ -60,6 +60,20 @@ variable "public_host_address_index" {
   description = "Optional fixed ip address within the public net"
   default     = null
 }
+
+variable "networks" {
+  type = map(
+    object({
+      network            = string
+      subnet             = string
+      host_address_index = number
+      access             = bool
+    })
+  )
+  description = "Networks the instance should be created with"
+  default     = {}
+}
+
 variable "additional_networks" {
   type = map(
     object({
@@ -70,18 +84,6 @@ variable "additional_networks" {
   )
   description = "Additional networks the management host should be connected to"
   default     = {}
-}
-
-variable "fip_pool" {
-  type        = string
-  description = "Floating IP pool"
-  default     = "provider-cyberrange-207"
-}
-
-variable "create_fip" {
-  type        = bool
-  description = "If a Floating IP should be allocated and assigend"
-  default     = true
 }
 
 variable "use_volume" {
@@ -96,13 +98,14 @@ variable "network_access" {
   default     = false
 }
 
-variable "ext_networks" {
-  type        = set(
-    object({
-      name    = string
-      access  = bool
-    })
-  )
-  description = "External Network Host is Connected to"
-  default     = []
+variable "fip_pool" {
+  type        = string
+  description = "Floating IP pool"
+  default     = "provider-cyberrange-207"
+}
+
+variable "create_fip" {
+  type        = bool
+  description = "If a Floating IP should be allocated and assigend"
+  default     = true
 }
