@@ -1,10 +1,5 @@
-terraform {
-  backend "consul" {}
-}
-
-# Create instance
 module "mgmthost" {
-  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.5.0"
+  source              = "git@github.com:ait-cs-IaaS/terraform-openstack-srv_noportsec.git?ref=v1.5.1"
   hostname            = var.hostname
   tag                 = var.tag
   metadata            = var.metadata
